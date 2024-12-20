@@ -122,46 +122,101 @@ Date:....../......../...........<br><br>
   <style>
     /* General Styles */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
       background-color: #f4f4f9;
       color: #333;
     }
+
     header {
-      background-color: #0078d7;
+      background: linear-gradient(135deg, #0078d7, #00c6ff);
       color: white;
-      padding: 20px 0;
       text-align: center;
+      padding: 20px 10px;
     }
+
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
+      margin: 0;
     }
+
     header p {
-      margin: 5px 0 0;
       font-size: 1.2rem;
+      margin: 5px 0 0;
     }
 
     /* Section Styles */
     section {
-      padding: 20px;
-      margin: 20px auto;
       max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
+
     section h2 {
       color: #0078d7;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
+      text-align: center;
     }
-    ul {
-      list-style: none;
-      padding: 0;
+
+    /* Table Styles */
+    .responsive-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
     }
-    ul li {
-      margin-bottom: 10px;
+
+    .responsive-table th,
+    .responsive-table td {
+      padding: 15px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    .responsive-table th {
+      background-color: #0078d7;
+      color: white;
+    }
+
+    .responsive-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    /* Card Layout for Smaller Screens */
+    @media (max-width: 768px) {
+      .responsive-table {
+        display: block;
+      }
+
+      .responsive-table tr {
+        display: block;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .responsive-table th {
+        display: none;
+      }
+
+      .responsive-table td {
+        display: block;
+        padding: 10px;
+        text-align: left;
+        border: none;
+      }
+
+      .responsive-table td::before {
+        content: attr(data-label);
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+        color: #0078d7;
+      }
     }
 
     /* Buttons */
@@ -169,6 +224,7 @@ Date:....../......../...........<br><br>
       text-align: center;
       margin: 20px 0;
     }
+
     .buttons button {
       background-color: #0078d7;
       color: white;
@@ -180,6 +236,7 @@ Date:....../......../...........<br><br>
       margin: 5px;
       transition: background-color 0.3s ease;
     }
+
     .buttons button:hover {
       background-color: #005bb5;
     }
@@ -210,55 +267,67 @@ Date:....../......../...........<br><br>
   <!-- Education Section -->
   <section>
     <h2>Education</h2>
-    <ul>
-      <li><strong>BSc - Computer Science & Engineering (2020 - 2024)</strong> - United International University, Dhaka (CGPA: 3.92/4.00)</li>
-      <li><strong>HSC - Science (2016 - 2018)</strong> - Bangladesh Navy College, Dhaka (GPA: 4.25/5.00)</li>
-      <li><strong>SSC - Science (2011 - 2016)</strong> - Comilla Modern High School, Comilla (GPA: 5.00/5.00)</li>
-    </ul>
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Degree</th>
+          <th>Institution</th>
+          <th>Year</th>
+          <th>Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Degree">BSc - Computer Science & Engineering</td>
+          <td data-label="Institution">United International University</td>
+          <td data-label="Year">2020 - 2024</td>
+          <td data-label="Result">3.92/4.00</td>
+        </tr>
+        <tr>
+          <td data-label="Degree">HSC - Science</td>
+          <td data-label="Institution">Bangladesh Navy College</td>
+          <td data-label="Year">2016 - 2018</td>
+          <td data-label="Result">4.25/5.00</td>
+        </tr>
+        <tr>
+          <td data-label="Degree">SSC - Science</td>
+          <td data-label="Institution">Comilla Modern High School</td>
+          <td data-label="Year">2011 - 2016</td>
+          <td data-label="Result">5.00/5.00</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Work Experience Section -->
   <section>
     <h2>Work Experience</h2>
-    <ul>
-      <li><strong>Contractual Lecturer (Jan 2024 - Present)</strong> - United International University</li>
-      <li><strong>Intern in Software Quality Assurance (Jun 2023 - Sept 2023)</strong> - Skill Jobs</li>
-      <li><strong>Grader (Jan 2023 - Jan 2024)</strong> - United International University</li>
-      <li><strong>Undergraduate Teaching Assistant (Sept 2022 - Jan 2024)</strong> - United International University</li>
-    </ul>
-  </section>
-
-  <!-- Projects Section -->
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Library Management System</strong> - Tool: C</li>
-      <li><strong>Smart Super Shop</strong> - Tool: Java</li>
-      <li><strong>Smart Agro Farm</strong> - Tool: Arduino</li>
-      <li><strong>IoT Enabled Street Environment</strong> - Tool: Arduino, Microsoft Azure</li>
-      <li><strong>ArtPatio</strong> - Tool: PHP, MySQL, HTML, CSS, JS</li>
-      <li><strong>HireHub</strong> - Tool: PHP, MySQL, HTML, CSS, JS</li>
-      <li><strong>TourPlanner BD</strong> - Tool: Django, PHP, HTML, CSS</li>
-    </ul>
-  </section>
-
-  <!-- Achievements Section -->
-  <section>
-    <h2>Achievements</h2>
-    <ul>
-      <li>System Analysis and Design Lab Project Show Champion (Spring 2023)</li>
-      <li>ArtPatio Scholarship Program (100% Scholarship in 7 Trimesters)</li>
-    </ul>
-  </section>
-
-  <!-- Publications Section -->
-  <section>
-    <h2>Publications</h2>
-    <ul>
-      <li>An IoT-and Cloud-Based E-Waste Management System for Resource Reclamation</li>
-      <li>Recyclable Waste Image Classification using Convolutional Neural Networks</li>
-      <li>Thought Scope: Human Cognitive Thinking Classification from Eye Position</li>
-    </ul>
+    <table class="responsive-table">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Company</th>
+          <th>Year</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Position">Contractual Lecturer</td>
+          <td data-label="Company">United International University</td>
+          <td data-label="Year">Jan 2024 - Present</td>
+        </tr>
+        <tr>
+          <td data-label="Position">Intern in Software QA</td>
+          <td data-label="Company">Skill Jobs</td>
+          <td data-label="Year">Jun 2023 - Sept 2023</td>
+        </tr>
+        <tr>
+          <td data-label="Position">Grader</td>
+          <td data-label="Company">United International University</td>
+          <td data-label="Year">Jan 2023 - Jan 2024</td>
+        </tr>
+      </tbody>
+    </table>
   </section>
 
   <!-- Buttons -->
